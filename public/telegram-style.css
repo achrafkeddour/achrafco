@@ -1,0 +1,18 @@
+/* telegram-style.css */
+.telegram-style {
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.telegram-style .list-group-item {
+    cursor: pointer;
+}
+
+.telegram-style .card-header {
+    border-radius: 10px 10px 0 0;
+}
+
+.telegram-style .card-footer {
+    border-radius: 0 0 10px 10px;
+}

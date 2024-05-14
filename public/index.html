@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="telegram-style.css">
+</head>
+<body>
+    <div id="authentication-container" class="container mt-5">
+        <div id="login-form">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <input type="text" name="username" class="form-control mb-3" placeholder="Enter your username" required>
+                <input type="password" name="password" class="form-control mb-3" placeholder="Enter your password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        </div>
+        <div id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <input type="text" name="username" class="form-control mb-3" placeholder="Enter your username" required>
+                <input type="password" name="password" class="form-control mb-3" placeholder="Enter your password" required>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+        </div>
+    </div>
+
+    <div id="chat-container" class="container mt-5" style="display: none;">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="user-list" class="list-group telegram-style">
+                    <div class="list-group-item bg-primary text-white">
+                        Contacts
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card h-100 telegram-style">
+                    <div class="card-header bg-primary text-white">
+                        Chat Messages
+                    </div>
+                    <div id="chat-messages" class="card-body overflow-auto">
+                        <!-- Messages will appear here -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <input type="text" id="message-input" class="form-control" placeholder="Type your message...">
+                            <div class="input-group-append">
+                                <button id="send-button" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
